@@ -25,6 +25,7 @@ function displaySection() {
   // S'il n'y a pas de hash (par ex, on est sur "localhost:8080/"), le défaut devient '#home'
   const section = window.location.hash || '#home'
   const sectionSplit = section.split('-')
+  console.log(sectionSplit);
 
   // Toggle par défaut des sections et de la navigation
   toggleSection(sectionSplit[0])
@@ -64,6 +65,7 @@ function displaySection() {
 window.addEventListener('hashchange', displaySection)
 
 // Affichage au chargement pour traiter l'url en cours (exemple: on ouvre un lien dans un nouvel onglet)
+
 displaySection()
 
 // Ici, on écoute la mise à jour des favoris dans le storage. Lorsque la liste à changé et que l'on est dans la section
@@ -73,5 +75,5 @@ window.addEventListener('favorites_updated', () => {
     renderFavoritesSongsSection()
 })
 
-// On enregistre le worker pour s'occuper de la mise en cache
-navigator.serviceWorker.register('/workerCacheFetched.js')
+/* // On enregistre le worker pour s'occuper de la mise en cache
+navigator.serviceWorker.register('/workerCacheFetched.js') */

@@ -76,6 +76,7 @@ async function renderSearchSongsSection(query) {
 function renderFavoritesSongsSection() {
   const songs = getFavorites()
   songsSectionTitle.innerText = 'Favoris'
+
   renderSongs(songs)
 }
 
